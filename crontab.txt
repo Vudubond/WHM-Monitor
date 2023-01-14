@@ -1,0 +1,14 @@
+# Add cronjobs to /etc/crontab
+
+33 1 * * * sh /home/$cpuser/scripts/rmvoldlogs.sh
+47 22 * * * sh /home/$cpuser/scripts/rmvtemp.sh
+47 23 * * * sh /home/$cpuser/scripts/rmvgarbage.sh
+33 3 * * * sudo sh /home/$cpuser/scripts/cphulk/rmvblacklistauto.sh
+33 6 * * * sudo sh /home/$cpuser/scripts/serverwatch/serverwatch.sh
+1 00,12 * * * sudo sh /home/$cpuser/scripts/errorlogwatch/errorlogwatch.sh
+*/15 * * * * sudo sh /home/$cpuser/scripts/service/servicestatus.sh
+*/5 * * * * sudo sh /home/$cpuser/scripts/service/httpdprocess.sh
+7 * * * * sudo sh /home/$cpuser/scripts/spam/hourlycheck.sh
+17 * * * * sudo sh /home/$cpuser/scripts/ipmonitor/ipmonitor.sh
+33 3 * * * sudo sh /home/$cpuser/scripts/serverwatch/filecount.sh
+* * * * * sudo sh /home/$cpuser/scripts/status/loadavg.sh
